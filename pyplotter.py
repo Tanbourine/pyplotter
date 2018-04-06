@@ -26,10 +26,10 @@ def main():
 
 # ======= Plotting ========
     plt.figure()
-    plt.errorbar(x_data, y_data, yerr=yerr)
+    plt.errorbar(x_data, y_data, yerr=yerr, fmt='o')
     plt.title("Simple Errorbars")
     plt.plot(x_data, y_data)
-    plt.legend(['A simple error bar'])
+    plt.legend(['Best fit line', 'Datapoint'])
     plt.grid()
     plt.show()
 

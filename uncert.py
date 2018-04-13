@@ -5,7 +5,6 @@ from uncertainties import ufloat_fromstr
 
 def format_output(output):
     ''' formats output string to be pleasing to the eye'''
-    print('')
     print('==============')
     print(output)
     print('==============')
@@ -65,9 +64,11 @@ def get_input(num):
 
     input_value = []
     for i in range(1, num+1):
-        user_input_value = input('Input value ' + str(i) + ' >>> ')
+        print('')
+        user_input_value = input('Input value ' + str(i) + '                 >>> ')
         user_input_uncertainty = input(
-            'Input uncertainty value ' + str(i) + ' >>> ')
+            'Input uncertainty value ' + str(i) + '     >>> +/-  ')
+        print('')
         input_value.append(ufloat_fromstr(
             user_input_value + '+/-' + user_input_uncertainty))
     return input_value
@@ -80,6 +81,10 @@ def main():
     while flag in ['true', 'yes', 'y', 'yup', 'yessir', 'yeah', '', ' ']:
         operation = input('Which operation would you like to perform? >>> ')
         operation = operation.lower()
+
+        print('')
+        print('==============')
+        print('')
 
         if operation in ['add', 'addition', 'plus', 'a']:
             add_uncertainty()
@@ -104,6 +109,7 @@ def main():
             print('Invalid input')
 
         flag = input('Continue? >>> ')
+        print('')
         flag = flag.lower()
 
 

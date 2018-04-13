@@ -2,6 +2,7 @@
 
 from uncertainties import ufloat_fromstr
 
+
 def format_output(output):
     ''' formats output string to be pleasing to the eye'''
     print('')
@@ -9,6 +10,7 @@ def format_output(output):
     print(output)
     print('==============')
     print('')
+
 
 def add_uncertainty():
     ''' add two values together and find uncertainty'''
@@ -73,11 +75,36 @@ def get_input(num):
 
 def main():
     ''' main function '''
-    add_uncertainty()
-    subtract_uncertainty()
-    multiply_uncertainty()
-    divide_uncertainty()
-    square_uncertainty()
+
+    flag = 'true'
+    while flag in ['true', 'yes', 'y', 'yup', 'yessir', 'yeah', '', ' ']:
+        operation = input('Which operation would you like to perform? >>> ')
+        operation = operation.lower()
+
+        if operation in ['add', 'addition', 'plus', 'a']:
+            add_uncertainty()
+
+        elif operation in ['subtract', 'minus', 'less', 's']:
+            subtract_uncertainty()
+
+        elif operation in ['multiply', 'mult', 'times', 'm']:
+            multiply_uncertainty()
+
+        elif operation in ['divide', 'div', 'd']:
+            divide_uncertainty()
+
+        elif operation in ['square', 'exp', 'exponent']:
+            square_uncertainty()
+
+        elif operation in ['no', 'cancel', 'n']:
+            print('Canceling')
+            quit()
+
+        else:
+            print('Invalid input')
+
+        flag = input('Continue? >>> ')
+        flag = flag.lower()
 
 
 if __name__ == '__main__':

@@ -4,8 +4,6 @@ used to plot pies
 import csv
 import numpy as np
 import matplotlib.pyplot as plt
-from uncertainties import ufloat
-from uncertainties.umath import *
 
 
 def main():

@@ -65,7 +65,8 @@ def get_input(num):
     input_value = []
     for i in range(1, num+1):
         print('')
-        user_input_value = input('Input value ' + str(i) + '                 >>> ')
+        user_input_value = input(
+            'Input value ' + str(i) + '                 >>> ')
         user_input_uncertainty = input(
             'Input uncertainty value ' + str(i) + '     >>> +/-  ')
         print('')
@@ -78,7 +79,8 @@ def main():
     ''' main function '''
 
     flag = 'true'
-    while flag in ['true', 'yes', 'y', 'yup', 'yessir', 'yeah', '', ' ']:
+    while flag in ['true', 'yes', 'y', 'yup', 'yessir', 'yeah', '', ' ', 'yuh',
+                   'yeee', 'yas']:
         operation = input('Which operation would you like to perform? >>> ')
         operation = operation.lower()
 
